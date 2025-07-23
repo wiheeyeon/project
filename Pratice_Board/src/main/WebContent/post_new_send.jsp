@@ -10,8 +10,8 @@
 try
 {
     // JDBC 드라이버 연결
-    Class.forName("com.mysql.jdbc.Driver");
-        String db_address = "jdbc:mysql://localhost:3306/dbdorm";
+    Class.forName("com.mysql.cj.jdbc.Driver");
+        String db_address = "jdbc:mysql://211.47.75.102/";
         String db_username = "dorm";
         String db_pwd = "anamdorm1!";
         Connection connection = DriverManager.getConnection(db_address, db_username, db_pwd);
@@ -27,7 +27,7 @@ try
     String title = request.getParameter("title");
     String content = request.getParameter("content");
 	
-	// 게시글 번호를 결정하기 위한 임시 정수형 변수 선언
+	// 게시글 번호를 결정하기 위한 임시 정수형 변수 선언`
 	int num = 0;
 	
 	// MySQL로 전송하기 위한 쿼리문인 insertQuery 문자열 선언 (현재 등록된 게시글의 갯수를 파악)
